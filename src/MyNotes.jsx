@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import moment from 'moment';
 
 const MyNotes = () => {
   const [notes, setNotes] = useState([]);
@@ -49,6 +50,7 @@ const MyNotes = () => {
               <div className="card-body">
                 <h2 className="card-title">{el.title}</h2>
                 <p>{el.note}</p>
+                <p className="text-red-200">{el.date}</p>
               </div>
               <div className="flex justify-center gap-4 p-3">
                 <button

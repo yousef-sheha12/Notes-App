@@ -1,3 +1,4 @@
+import moment from "moment";
 import { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 const OriginalPage = () => {
@@ -17,9 +18,11 @@ const OriginalPage = () => {
   };
 
   const addNote = () => {
+    let time = moment().format('hh:mm A - 	ddd/MM/YYYY')
     let newNote = {
       title: titleInput.current.value,
       note: noteInput.current.value,
+      date:time,
     };
     let copy = [...notes, newNote];
     setNotes(copy);
@@ -83,6 +86,7 @@ const OriginalPage = () => {
                 <div className="card-body">
                   <h2 className="card-title">{el.title}</h2>
                   <p>{el.note}</p>
+                  <p className="text-red-200">{el.date}</p>
                 </div>
                 <div className="flex justify-center gap-4 p-3">
                   <button
