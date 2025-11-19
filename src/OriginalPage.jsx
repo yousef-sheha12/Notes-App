@@ -114,7 +114,7 @@ const OriginalPage = () => {
 
         {editIndex && (
           <div className="modal modal-open">
-            <div className="modal-box w-100">
+            <div className="modal-box w-80">
               <h3 className="font-bold text-lg">Edit Note</h3>
 
               <input
